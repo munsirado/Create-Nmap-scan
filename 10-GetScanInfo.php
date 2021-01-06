@@ -9,6 +9,9 @@
  * @copyright MUNSIRADO Group
  * 
  */
+ 	
+	require_once("config.php");
+	
     $curl = curl_init();
     
     curl_setopt_array($curl, [
@@ -21,10 +24,10 @@
       CURLOPT_CUSTOMREQUEST => "POST",
       CURLOPT_HTTPHEADER => [
         "content-type: multipart/form-data",
-        "NMAP-API-KEY: YOUR_API_KEY_HERE"
+        "NMAP-API-KEY: " . NMAP_API_KEY . ""
       ],
       CURLOPT_POSTFIELDS => [
-        "scan_id" => "string"
+        "scan_id" => "".$scan_id.""
       ],
       
     ]);

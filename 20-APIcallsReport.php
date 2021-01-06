@@ -9,7 +9,9 @@
  * @copyright MUNSIRADO Group
  * 
  */
- 
+ 	
+	require_once("config.php");
+	
     $curl = curl_init();
     
     curl_setopt_array($curl, [
@@ -21,7 +23,7 @@
       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
       CURLOPT_CUSTOMREQUEST => "GET",
       CURLOPT_HTTPHEADER => [
-        "NMAP-API-KEY: YOUR_API_KEY_HERE"
+        "NMAP-API-KEY: " . NMAP_API_KEY . ""
       ],
       
     ]);

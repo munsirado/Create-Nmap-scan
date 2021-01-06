@@ -10,6 +10,8 @@
  * 
  */
 
+	require_once("config.php");
+	
     $curl = curl_init();
     
     curl_setopt_array($curl, [
@@ -22,14 +24,14 @@
       CURLOPT_CUSTOMREQUEST => "POST",
       CURLOPT_HTTPHEADER => [
         "content-type: multipart/form-data",
-        "NMAP-API-KEY: YOUR_API_KEY_HERE"
+        "NMAP-API-KEY: " . NMAP_API_KEY . ""
       ],
       CURLOPT_POSTFIELDS => [
-        "scan_type" => "string",
-        "command" => "string",
-        "schedule" => "string",
-        "target" => "string",
-        "target_end" => "string"
+        "scan_type" => "single",
+        "command" => "fast",
+        "schedule" => "now",
+        "target" => "certifiedhacker.com",
+        "target_end" => ""
       ],
       
     ]);
