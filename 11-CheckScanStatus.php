@@ -1,9 +1,19 @@
 <?php
-
+/** 
+ * Check scan status
+ * This method is used for Get created scan status
+ * 
+ * @web nmap.online
+ * @web api.nmap.online
+ * @web www.munsirado.com
+ * @copyright MUNSIRADO Group
+ * 
+ */
+ 
     $curl = curl_init();
     
     curl_setopt_array($curl, [
-      CURLOPT_URL => "https://api.nmap.online/v01/start_scan",
+      CURLOPT_URL => "https://api.nmap.online/v01/check_scan_status",
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_ENCODING => "",
       CURLOPT_MAXREDIRS => 10,
@@ -15,11 +25,7 @@
         "NMAP-API-KEY: YOUR_API_KEY_HERE"
       ],
       CURLOPT_POSTFIELDS => [
-        "scan_type" => "string",
-        "command" => "string",
-        "schedule" => "string",
-        "target" => "string",
-        "target_end" => "string"
+        "scan_id" => "string"
       ],
       
     ]);

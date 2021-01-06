@@ -1,9 +1,19 @@
 <?php
-
+/** 
+ * Get scan report
+ * This method is used for Get scan result
+ * 
+ * @web nmap.online
+ * @web api.nmap.online
+ * @web www.munsirado.com
+ * @copyright MUNSIRADO Group
+ * 
+ */
+ 
     $curl = curl_init();
     
     curl_setopt_array($curl, [
-      CURLOPT_URL => "https://api.nmap.online/v01/scan_info",
+      CURLOPT_URL => "https://api.nmap.online/v01/scan_result",
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_ENCODING => "",
       CURLOPT_MAXREDIRS => 10,
